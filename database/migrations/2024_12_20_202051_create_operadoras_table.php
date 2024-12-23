@@ -6,21 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('operadoras', function (Blueprint $table) {
             $table->id();
-            $table->integer('cnpj');
+            $table->string('cnpj');
             $table->string('nome');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('operadoras');

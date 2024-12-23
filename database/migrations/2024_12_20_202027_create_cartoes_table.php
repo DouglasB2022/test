@@ -13,17 +13,14 @@ return new class extends Migration
     {
         Schema::create('cartoes', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero');
-            $table->integer('saldo');
-            $table->integer('validade');
-            $table->integer('funcionarios_id');
-            $table->integer('operadora_id');
+            $table->string('numero');
+            $table->string('saldo');
+            $table->string('validade');
+            $table->string('funcionarios_id');
+            $table->string('operadora_id');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('cartoes');

@@ -8,16 +8,14 @@
     <title>Sistema de Cadastro</title>
 </head>
 <body>
-    <h1>Página do Funcionário</h1>
-    <a href="{{ route('create') }}">Cadastra Funcionario</a>
-    <a href="{{ route('create') }}">Cadastra Cartoes</a>
-    <a href="{{ route('create') }}">Cadastra Operadoras</a>
+    <h1>Página da Operadora</h1>
+    <a href="{{ route('funcionario.create') }}">Cadastra Funcionario</a>
+    <a href="{{ route('funcionario.create') }}">Cadastra Cartoes</a>
+    <a href="{{ route('operdora.create') }}">Cadastra Operadoras</a>
     <ul>
         @foreach( $funcionarios as $funcionario )
             <li>Nome: {{ $funcionario->nome }}</li>
             <li>CPF: {{ $funcionario->cpf }}</li>
-            <li>Cartao: {{ $funcionario->cartao }}</li>
-            <li>Operadora: {{ $funcionario->operadora }}</li>
             <button >Deletar</button>
         @endforeach
     </ul>

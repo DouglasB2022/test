@@ -4,7 +4,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*FuncionariosController',
+        './storage/framework/views/*FuncionarioController',
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',

@@ -9,9 +9,8 @@
 </head>
 <body>
     <h1>Página de Cadastros dos Funcionários</h1>
-    <a href="{{ route('index') }}">Home</a>
-    <form action="{{ route('store') }}" method="post">
-        @method('PUT')
+    <a href="{{ route('funcionario.index') }}">Home</a>
+    <form action="{{ route('funcionario.store') }}" method="post">
         @csrf
         <label>
             <input type="text" name="nome" placeholder="Nome">
@@ -19,12 +18,6 @@
         <label>
             <input type="text" name="cpf" placeholder="CPF">
         </label><br>
-        <label>
-            <input type="text" name="cartao" placeholder="Cartao">
-        </label><br>
-        <label>
-            <input type="text" name="operadora" placeholder="Operadora">
-        </label>
         <button type="submit">
             Enviar
         </button>
