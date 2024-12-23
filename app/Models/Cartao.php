@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Cartao extends Model
 {
+    protected $table = 'cartoes';
+    public $timestamps = false;
     protected $fillable = [
         'numero' ,
-        'cpf' ,
-        'nome' ,
+        'saldo' ,
         'validade',
+        'funcionario_id',
+        'operadora_id',
     ];
 
     public function operadora(): BelongsTo

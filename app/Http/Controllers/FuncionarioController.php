@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
+use App\Models\Operadora;
 use Illuminate\Http\Request;
 
 
@@ -13,8 +14,9 @@ class FuncionarioController extends Controller
     {
 
         $funcionarios = Funcionario::query()->orderBy('nome')->get();
+        $operadoras = Operadora::query()->orderBy('nome')->get();
 
-        return view('funcionarios.layout')->with('funcionarios', $funcionarios);
+        return view('funcionarios.layout')->with('funcionarios', $funcionarios)->with('operadoras', $operadoras);
     }
 
 
@@ -32,7 +34,7 @@ class FuncionarioController extends Controller
         'cpf' => $request->cpf
         ]);
 
-        return to_route('funcionario.index');
+        return to_route('index');
     }
 
 
@@ -58,6 +60,6 @@ class FuncionarioController extends Controller
 {
         Funcionario::destroy($request->id);
 
-        return to_route('funcionario.index');
+        return to_route('index');
     }
 }

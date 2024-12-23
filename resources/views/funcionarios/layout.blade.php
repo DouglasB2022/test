@@ -8,20 +8,33 @@
     <title>Sistema de Cadastro</title>
 </head>
 <body>
-    <h1>Página do Funcionário</h1>
-    <a href="{{ route('funcionario.create') }}">Cadastra Funcionario</a>
-    <a href="{{ route('funcionario.create') }}">Cadastra Cartoes</a>
-    <a href="{{ route('operadora.create') }}">Cadastra Operadoras</a>
-            <ul>
-            @foreach( $funcionarios as $funcionario )
-                <li>Nome: {{ $funcionario->nome }}</li>
-                <li>CPF: {{ $funcionario->cpf }}</li>
+<h1>Página do Funcionário</h1>
+<a href="{{ route('funcionario.create') }}">Cadastra Funcionario</a>
+<a href="{{ route('cartao.create') }}">Cadastra Cartao</a>
+<a href="{{ route('operadora.create') }}">Cadastra Operadoras</a>
+<ul>
+    OPERADORAS
+    @foreach( $operadoras as $operadora )
+        <li>{{ $operadora->nome }}</li>
+    @endforeach
+</ul>
 
-    <form action="{{ route('funcionario.destroy', $funcionario->id) }}" method="post">
-            @csrf
-                <button type="submit">Deletar</button>
-    </form>
+<ul>
+    @foreach( $funcionarios as $funcionario )
+        <li>Nome: {{ $funcionario->nome }}</li>
+        <li>CPF: {{ $funcionario->cpf }}</li>
+        Cartoes
+        <ul>
+            @foreach( $funcionario->cartoes as $cartao )
+            <li>{{ $cartao->operadora->nome }} final {{ $cartao->numero }}: R$ {{ $cartao->saldo }}</li>
             @endforeach
         </ul>
+
+        <form action="{{ route('funcionario.destroy', $funcionario->id) }}" method="post">
+            @csrf
+            <button type="submit">Deletar</button>
+        </form>
+    @endforeach
+</ul>
 </body>
 </html>

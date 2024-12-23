@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('numero');
             $table->string('saldo');
             $table->string('validade');
-            $table->string('funcionarios_id');
-            $table->string('operadora_id');
+            $table->foreignId('funcionario_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('operadora_id')->constrained()->cascadeOnDelete();
         });
     }
 

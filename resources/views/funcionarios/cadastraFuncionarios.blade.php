@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Página de Cadastros dos Funcionários</h1>
-    <a href="{{ route('funcionario.index') }}">Home</a>
+    <a href="{{ route('index') }}">Home</a>
     <form action="{{ route('funcionario.store') }}" method="post">
         @csrf
         <label>

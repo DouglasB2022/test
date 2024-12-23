@@ -12,7 +12,7 @@ class Funcionario extends Model
         'nome' ,
         'cpf' ,
     ];
-    public function cartao(): HasMany
+    public function cartoes(): HasMany
     {
         return $this->hasMany(Cartao::class);
     }

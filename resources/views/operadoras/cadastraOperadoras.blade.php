@@ -9,11 +9,11 @@
 </head>
 <body>
     <h1>Página de Cadastros da Operadora</h1>
-    <a href="{{ route('funcionario.index') }}">Home</a>
+    <a href="{{ route('index') }}">Home</a>
     <form action="{{ route('operadora.store') }}" method="post">
         @csrf
         <label>
-            <input type="number" name="cpnj" placeholder="CNPJ">
+            <input type="number" name="cnpj" placeholder="CNPJ">
         </label><br>
         <label>
             <input type="text" name="nome" placeholder="Nome">

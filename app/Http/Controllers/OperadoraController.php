@@ -26,7 +26,7 @@ class OperadoraController extends Controller
             'cnpj' => $request->cnpj,
             'nome' => $request->nome
         ]);
-        return to_route('funcionario.index');
+        return redirect()->route('index');
     }
 
 
