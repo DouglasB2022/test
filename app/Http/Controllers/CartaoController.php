@@ -6,6 +6,7 @@ use App\Models\Cartao;
 use App\Models\Funcionario;
 use App\Models\Operadora;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CartaoController extends Controller
 {
@@ -40,15 +41,25 @@ class CartaoController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show(Request $request)
     {
+       $listaCartao = Cartao::with(['funcionario', 'operadora'])
+            ->where('numero', $request->numero)
+            ->get();
 
+        return view('cartoes.busca', compact('listaCartao'));
     }
 
 
-    public function edit(string $id)
+    public function recupera(Request $request)
     {
 
+        $listaCartao = Cartao::with(['funcionario', 'operadora'])
+            ->where('numero', $request->numero)
+            ->get();
+
+
+        return view('cartoes.busca', compact('listaCartao' ));
     }
 
 

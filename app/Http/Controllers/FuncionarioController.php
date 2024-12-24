@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cartao;
 use App\Models\Funcionario;
 use App\Models\Operadora;
 use Illuminate\Http\Request;
@@ -38,16 +39,13 @@ class FuncionarioController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show()
     {
+
 
     }
 
 
-    public function edit(string $id)
-    {
-        //
-    }
 
 
     public function update(Request $request, string $id)

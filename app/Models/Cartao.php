@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+
 
 class Cartao extends Model
 {
@@ -27,4 +27,7 @@ class Cartao extends Model
     {
         return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
+
+
+
 }

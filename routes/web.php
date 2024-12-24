@@ -24,3 +24,5 @@ Route::controller(OperadoraController::class)->group(function () {
 
 Route::get('/cartao/criar', [CartaoController::class, 'create'])->name('cartao.create');
 Route::post('/cartao/salvar', [CartaoController::class, 'store'])->name('cartao.store');
+Route::get('/cartao/buscar', [CartaoController::class,'show'])->name('cartao.show');
+Route::post('/cartao/recupera',[CartaoController::class, 'recupera'])->name('cartao.recupera');
