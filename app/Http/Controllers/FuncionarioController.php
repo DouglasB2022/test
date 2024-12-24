@@ -17,7 +17,7 @@ class FuncionarioController extends Controller
         $funcionarios = Funcionario::query()->orderBy('nome')->get();
         $operadoras = Operadora::query()->orderBy('nome')->get();
 
-        return view('funcionarios.layout')->with('funcionarios', $funcionarios)->with('operadoras', $operadoras);
+        return view('funcionarios.index')->with('funcionarios', $funcionarios)->with('operadoras', $operadoras);
     }
 
 

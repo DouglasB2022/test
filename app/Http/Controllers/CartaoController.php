@@ -43,11 +43,13 @@ class CartaoController extends Controller
 
     public function show(Request $request)
     {
-       $listaCartao = Cartao::with(['funcionario', 'operadora'])
-            ->where('numero', $request->numero)
-            ->get();
+        if ($request->method() == 'POST') {
+            $listaCartao = Cartao::with(['funcionario', 'operadora'])
+                ->where('numero', $request->numero)
+                ->get();
+        }
 
-        return view('cartoes.busca', compact('listaCartao'));
+        return view('cartoes.busca', [$listaCartao ?? null]);
     }
 
 
@@ -59,7 +61,7 @@ class CartaoController extends Controller
             ->get();
 
 
-        return view('cartoes.busca', compact('listaCartao' ));
+        return view('cartoes.busca', compact('listaCartao'));
     }
 
 
